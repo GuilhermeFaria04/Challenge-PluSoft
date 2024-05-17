@@ -16,6 +16,8 @@ Desvendando o Potencial dos Dados: Explorando a AI Generativa e o Deep Analytics
 
 Imagine uma solução que torna a navegação em aplicativos mais fácil e acessível para todos, especialmente para aqueles que podem sentir-se perdidos ou confusos ao usar novas tecnologias. Nosso projeto visa criar um ChatBot inteligente que atua como um guia amigável, ajudando os usuários a navegar pela aplicação e responder suas dúvidas sobre produtos. Nosso foco principal é oferecer suporte para o público idoso, que muitas vezes enfrenta dificuldades com a tecnologia e pode se beneficiar enormemente de uma assistência personalizada e intuitiva.
 
+## Sobre a Nossa Ideia
+
 ### Solução do Desafio
 
 O avanço tecnológico trouxe inúmeros benefícios, mas também criou barreiras de acessibilidade para alguns grupos, especialmente para os idosos, que muitas vezes se sentem desafiados ao usar aplicativos móveis e podem ficar frustrados ao tentar navegar por eles. A falta de familiaridade com interfaces digitais e a complexidade dos sistemas podem gerar ansiedade e desmotivação para explorar novas ferramentas. Portanto, há uma necessidade premente de uma solução que simplifique a interação com aplicativos e forneça orientação personalizada, especialmente para aqueles que enfrentam dificuldades devido à idade ou falta de experiência tecnológica. Nosso projeto visa preencher essa lacuna, fornecendo um ChatBot intuitivo e amigável que oferece suporte na navegação e fornece informações sobre os produtos, garantindo uma experiência mais inclusiva e gratificante para todos os usuários.
