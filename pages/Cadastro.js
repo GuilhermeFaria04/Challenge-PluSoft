@@ -1,12 +1,13 @@
 import React from 'react';
-import { Text, View, Button, TextInput } from 'react-native';
+import { Text, View, TextInput } from 'react-native';
 import { styles } from '../style/Style'
+import Button from '../components/Button';
 //import { ArrowLeftOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 //import { useChallengeControl } from '../control/challengeControl';
 
 
-const Cadastro = () => {
+const Cadastro = ({navigation}) => {
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
     const [telefone, setTelefone] = useState("");
@@ -14,7 +15,7 @@ const Cadastro = () => {
     const [confirmarSenha, setConfirmarSenha] = useState("");
     return (
         <View style={styles.container}>
-            <View style={styles.box}>
+            <View style={styles.boxcadastro}>
                 <Text style={styles.titulo}> Cadastro </Text>
                 <Text style={styles.subTitulo}> Prencha os dados pra Cadastrar! </Text>
                 <View style={styles.form}>
@@ -22,7 +23,7 @@ const Cadastro = () => {
                     <TextInput style={styles.textinput}
                         placeholder="Digite seu Nome"
                         value={nome} onChangeText={setNome} />
-                    <Text style={styles.label}>Email</Text>    
+                    <Text style={styles.label}>Email</Text>
                     <TextInput style={styles.textinput}
                         placeholder="Digite seu Email"
                         value={email} onChangeText={setEmail} />
@@ -34,15 +35,14 @@ const Cadastro = () => {
                     <TextInput style={styles.textinput}
                         placeholder="Digite seu Senha"
                         value={senha} onChangeText={setSenha}
-                        secureTextEntry={true}/>
+                        secureTextEntry={true} />
                     <Text style={styles.label}>Confirmar Senha</Text>
                     <TextInput style={styles.textinput}
                         placeholder="Confirme sua Senha"
                         value={confirmarSenha} onChangeText={setConfirmarSenha} />
-                    <Text style={styles.textlink}>Já possui cadastro? Clique aqui</Text>
                 </View>
-                <Button title="Cadastrar" onPress={() => { navigation.navigate('Home') }} />
-
+                <Text style={styles.textlink} onPress={() => { navigation.navigate('Login') }}>Já possui cadastro? Clique aqui</Text>
+                <Button title='Cadastrar' onpress={() => { navigation.navigate('Login') }}/>
             </View>
         </View>
     )

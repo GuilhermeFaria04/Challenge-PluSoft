@@ -20,9 +20,20 @@ export const styles = StyleSheet.create({
         textAlign: 'center',
         marginBottom: 7,
     },
-    box: {
+    boxcadastro: {
         width: 325,
         height: 570,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'white',
+        borderStyle: 'solid',
+        borderColor: 'white',
+        borderRadius: 20,
+        gap: 10,
+    },
+    boxlogin: {
+        width: 325,
+        height: 375,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'white',
@@ -47,7 +58,17 @@ export const styles = StyleSheet.create({
     textlink: {
         fontSize: 12,
         color: '#5B5D63'
+    },
+    buttonauth: {
+        width: 100,
+        height: 25,
+        borderRadius: 3,
+        backgroundColor: '#0043EF',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
     }
+
 });
 
 export default { styles };
