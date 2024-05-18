@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import Cadastro from './pages/Cadastro';
 import Login from './pages/Login';
 import Header from './components/Header';
+import Carrinho from './pages/Carrinho';
+import Favortios from './pages/Favoritos';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +17,16 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={Home}
+          options={{ header: () => <Header /> }}
+        />
+        <Stack.Screen
+          name="Carrinho"
+          component={Carrinho}
+          options={{ header: () => <Header /> }}
+        />
+        <Stack.Screen
+          name="Favoritos"
+          component={Favortios}
           options={{ header: () => <Header /> }}
         />
         <Stack.Screen

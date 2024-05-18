@@ -20,8 +20,12 @@ const Header = () => {
                     <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                         <Icon name="sign-in" size={24} color="white" style={styles.icon} />
                     </TouchableOpacity>
-                    <Icon name="heart" size={24} color="white" style={styles.icon} />
-                    <Icon name="shopping-cart" size={24} color="white" style={styles.icon} />
+                    <TouchableOpacity onPress={() => navigation.navigate('Favoritos')}>
+                        <Icon name="heart" size={24} color="white" style={styles.icon} />
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('Carrinho')}>
+                        <Icon name="shopping-cart" size={24} color="white" style={styles.icon} />
+                    </TouchableOpacity>
                 </View>
             </View>
             <View style={styles.barraPesquisa}>
