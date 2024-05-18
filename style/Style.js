@@ -59,15 +59,31 @@ export const styles = StyleSheet.create({
         fontSize: 12,
         color: '#5B5D63'
     },
-    buttonauth: {
-        width: 100,
-        height: 25,
-        borderRadius: 3,
-        backgroundColor: '#0043EF',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
+    sectionTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#fff',
+        textAlign: 'center',
+        marginVertical: 20,
+      },
+      consumerWeek: {
+        padding: 20,
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        margin: 20,
+      },
+      consumerImage: {
+        width: '100%',
+        height: 200,
+        borderRadius: 10,
+        marginBottom: 10,
+      },
+      consumerText: {
+        fontSize: 14,
+        color: '#000',
+        textAlign: 'justify',
+      },
+
 
 });
 

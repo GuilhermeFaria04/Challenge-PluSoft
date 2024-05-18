@@ -2,7 +2,6 @@ import React from 'react';
 import { Text, View, TextInput } from 'react-native';
 import { styles } from '../style/Style'
 import Button from '../components/Button';
-//import { ArrowLeftOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 //import { useChallengeControl } from '../control/challengeControl';
 
