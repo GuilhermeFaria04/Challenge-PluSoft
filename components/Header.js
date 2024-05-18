@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { styles } from '../style/Style'
 
 const Header = () => {
     const navigation = useNavigation();
@@ -34,44 +35,5 @@ const Header = () => {
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    headerbox: {
-        backgroundColor: '#333',
-        padding: 10,
-        marginTop: 20,
-    },
-    topSection: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        marginBottom: 10,
-    },
-    logo: {
-        color: '#fff',
-        fontSize: 24,
-        fontWeight: 'bold',
-    },
-    iconsRow: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-around',
-    },
-    icon: {
-        marginHorizontal: 5,
-    },
-    barraPesquisa: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: '#FFF',
-        borderRadius: 5,
-        paddingHorizontal: 10,
-        marginHorizontal: 10,
-    },
-    pesquisaInput: {
-        color: '#000',
-        marginLeft: 5,
-    },
-});
 
 export default Header;

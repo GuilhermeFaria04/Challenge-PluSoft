@@ -83,6 +83,42 @@ export const styles = StyleSheet.create({
         color: '#000',
         textAlign: 'justify',
       },
+      headerbox: {
+        backgroundColor: '#333',
+        padding: 10,
+        marginTop: 20,
+    },
+    topSection: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginBottom: 10,
+    },
+    logo: {
+        color: '#fff',
+        fontSize: 24,
+        fontWeight: 'bold',
+    },
+    iconsRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+    },
+    icon: {
+        marginHorizontal: 5,
+    },
+    barraPesquisa: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#FFF',
+        borderRadius: 5,
+        paddingHorizontal: 10,
+        marginHorizontal: 10,
+    },
+    pesquisaInput: {
+        color: '#000',
+        marginLeft: 5,
+    },
 
 
 });
