@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Text, ScrollView, Image, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import Header from '../components/Header';
 import consumidor from '../assets/Challenge-consumidor.png'
 import { styles } from '../style/Style'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import axios from 'axios';
 
-const Home = () => {
+const Home = ({navigation}) => {
   const ProdutosEletronicos = [
     {
       title: 'Smartphone Apple iPhone 13 256GB 5G Tela 6.1" Vermelho',
@@ -31,6 +32,28 @@ const Home = () => {
     }
   ];
 
+  async function favoritar(item){
+    const URL = 'http://localhost:5000/favoritos'
+    const body = (item.title, item.image)
+    try {
+        axios.post(URL, body)
+        navigation.navigate('Favoritos')
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+async function carrinho(item){
+  const URL = 'http://localhost:5000/carrinho'
+  const body = (item.title, item.image, item.price)
+  try {
+      axios.post(URL, body)
+      navigation.navigate('Carrinho')
+  } catch (error) {
+      console.log(error)
+  }
+}
+
   return (
     <ScrollView style={stylesHome.container}>
       <Header />
@@ -41,7 +64,12 @@ const Home = () => {
           <Text style={styles.produtoTitulo}>{item.title}</Text>
           <Text style={styles.produtoSubtitulo}>{item.subtitle}</Text>
           <Text style={styles.produtoPreco}>{item.price}</Text>
-          <Icon name="heart-o" size={24} color="white" style={stylesHome.icon} />
+          <TouchableOpacity onPress={() => favoritar(item)} style={stylesHome.icon}>
+            <Icon name="heart-o" size={24} color="white"/>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => carrinho(item)} style={stylesHome.iconCart}>
+            <Icon name="shopping-cart" size={24} color="white"/>
+          </TouchableOpacity>
         </View>
       ))}
       <Text style={stylesHome.titulo}>Produtos domésticos</Text>
@@ -51,7 +79,12 @@ const Home = () => {
           <Text style={styles.produtoTitulo}>{item.title}</Text>
           <Text style={styles.produtoSubtitulo}>{item.subtitle}</Text>
           <Text style={styles.produtoPreco}>{item.price}</Text>
-          <Icon name="heart-o" size={24} color="white" style={stylesHome.icon} />
+          <TouchableOpacity onPress={() => favoritar(item)} style={stylesHome.icon}>
+            <Icon name="heart-o" size={24} color="white"/>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => carrinho(item)} style={stylesHome.iconCart}>
+            <Icon name="shopping-cart" size={24} color="white"/>
+          </TouchableOpacity>
         </View>
       ))}
       <Text style={stylesHome.titulo}>Semana do consumidor</Text>
@@ -86,6 +119,12 @@ const stylesHome = StyleSheet.create({
     position: 'absolute',
     bottom: 10,
     right: 10,
+  },
+  iconCart: {
+    marginHorizontal: 5,
+    position: 'absolute',
+    bottom: 10,
+    right: 45,
   },
 });
 

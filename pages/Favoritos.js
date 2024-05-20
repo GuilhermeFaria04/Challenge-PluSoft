@@ -1,45 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView, Image  } from "react-native";
 import Header from '../components/Header';
 import { styles } from '../style/Style'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import axios from 'axios';
 
 const Favoritos = () => {
-  const ProdutosEletronicos = [
-    {
-      title: 'Smartphone Apple iPhone 13 256GB 5G Tela 6.1" Vermelho',
-      image: require('../assets/Challenge-celular.png')
-    },
-  ];
 
-  const ProdutosDomesticos = [
-    {
-      title: 'Fritadeira Airfryer Electrolux Family Efficient EAF51 5L 1700W 127V Vermelho',
-      image: require('../assets/Challenge-fritadeira.png')
+  const [produtos, setProdutos] = useState([])
+  useEffect(() => {
+    async function data(){
+      const URL = 'http://localhost:5000/favoritos'
+      try {
+          const produtoFav = axios.get(URL)
+          setProdutos(produtoFav.data)
+      } catch (error) {
+          console.log(error)
+      }
     }
-  ];
+    data()  
+  }, [] )
 
-    return(
-      <ScrollView style={stylesFav.container}>
-      <Header />
-      <Text style={stylesFav.titulo}>Favoritos</Text>
-      {ProdutosEletronicos.map((item, index) => (
-        <View key={index} style={styles.produtoBox}>
-          <Image source={item.image} style={styles.produtoImagem} />
-          <Text style={styles.produtoTitulo}>{item.title}</Text>
-          <Icon name="heart" size={24} color="white" style={stylesFav.icon} />
-        </View>
-      ))}
-      {ProdutosDomesticos.map((item, index) => (
-        <View key={index} style={styles.produtoBox}>
-          <Image source={item.image} style={styles.produtoImagem} />
-          <Text style={styles.produtoTitulo}>{item.title}</Text>
-          <Icon name="heart" size={24} color="white" style={stylesFav.icon} />
-        </View>
-      ))}
-      </ScrollView>
-    ); 
-  }
+  return(
+    <ScrollView style={stylesFav.container}>
+    <Header />
+    <Text style={stylesFav.titulo}>Favoritos</Text>
+    {produtos.map((item, index) => (
+      <View key={index} style={styles.produtoBox}>
+        <Image source={item.image} style={styles.produtoImagem} />
+        <Text style={styles.produtoTitulo}>{item.title}</Text>
+        <Icon name="heart" size={24} color="white" style={stylesFav.icon} />
+      </View>
+    ))}
+    </ScrollView>
+  ); 
+}
 
 
 

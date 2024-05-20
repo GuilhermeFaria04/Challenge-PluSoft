@@ -3,6 +3,7 @@ import { Text, View, TextInput } from 'react-native';
 import { styles } from '../style/Style'
 import { useState } from 'react';
 import Button from '../components/Button';
+import axios from 'axios';
 
 
 
@@ -10,13 +11,16 @@ const Login = ({ navigation }) => {
     const [user, setUser] = useState("");
     const [pass, setPass] = useState(""); 
 
-    const handleLogin = () => {
-        if (user && pass) {
-            navigation.navigate('Home');
-        } else {
-            alert('Por favor, preencha ambos os campos.');
+    async function acesso(){
+        const URL = 'http://localhost:5000/login'
+        const body = (user, pass)
+        try {
+            axios.post(URL, body)
+            navigation.navigate('Home')
+        } catch (error) {
+            console.log(error)
         }
-    };
+    }
     
     return (
         <View style={styles.container}>
@@ -35,7 +39,7 @@ const Login = ({ navigation }) => {
                         secureTextEntry={true} />
                 </View>
                 <Text style={styles.textlink} onPress={() => { navigation.navigate('Cadastro') }}>Não possui cadastro? Clique aqui</Text>
-                <Button title='Logar' onpress={handleLogin}/>
+                <Button title='Logar' onpress={acesso}/>
             </View>
         </View>
     )

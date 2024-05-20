@@ -3,6 +3,7 @@ import { Text, View, TextInput } from 'react-native';
 import { styles } from '../style/Style'
 import Button from '../components/Button';
 import { useState } from 'react';
+import axios from 'axios';
 //import { useChallengeControl } from '../control/challengeControl';
 
 
@@ -13,13 +14,18 @@ const Cadastro = ({navigation}) => {
     const [senha, setSenha] = useState("");
     const [confirmarSenha, setConfirmarSenha] = useState("");
 
-    const handleCadastro = () => {
-        if (nome && email && telefone && senha && confirmarSenha) {
-            navigation.navigate('Login');
-        } else {
-            alert('Por favor, preencha todos os campos.');
+
+    async function registro(){
+        if(senha !== confirmarSenha) return alert('Senha não conferem')
+        const URL = 'http://localhost:5000/registro'
+        const body = (nome, email, senha)
+        try {
+            axios.post(URL, body)
+            navigation.navigate('Login')
+        } catch (error) {
+            console.log(error)
         }
-    };
+    }
 
     return (
         <View style={styles.container}>
@@ -30,7 +36,7 @@ const Cadastro = ({navigation}) => {
                     <Text style={styles.label}>Nome</Text>
                     <TextInput style={styles.textinput}
                         placeholder="Digite seu Nome"
-                        value={nome} onChangeText={setNome} />
+                        value={nome} onChangeText={setNome}/>
                     <Text style={styles.label}>Email</Text>
                     <TextInput style={styles.textinput}
                         placeholder="Digite seu Email"
@@ -50,7 +56,7 @@ const Cadastro = ({navigation}) => {
                         value={confirmarSenha} onChangeText={setConfirmarSenha} />
                 </View>
                 <Text style={styles.textlink} onPress={() => { navigation.navigate('Login') }}>Já possui cadastro? Clique aqui</Text>
-                <Button title='Cadastrar' onpress={handleCadastro}/>
+                <Button title='Cadastrar' onpress={registro}/>
             </View>
         </View>
     )
