@@ -12,6 +12,15 @@ const Cadastro = ({navigation}) => {
     const [telefone, setTelefone] = useState("");
     const [senha, setSenha] = useState("");
     const [confirmarSenha, setConfirmarSenha] = useState("");
+
+    const handleCadastro = () => {
+        if (nome && email && telefone && senha && confirmarSenha) {
+            navigation.navigate('Login');
+        } else {
+            alert('Por favor, preencha todos os campos.');
+        }
+    };
+
     return (
         <View style={styles.container}>
             <View style={styles.boxcadastro}>
@@ -41,7 +50,7 @@ const Cadastro = ({navigation}) => {
                         value={confirmarSenha} onChangeText={setConfirmarSenha} />
                 </View>
                 <Text style={styles.textlink} onPress={() => { navigation.navigate('Login') }}>Já possui cadastro? Clique aqui</Text>
-                <Button title='Cadastrar' onpress={() => { navigation.navigate('Login') }}/>
+                <Button title='Cadastrar' onpress={handleCadastro}/>
             </View>
         </View>
     )

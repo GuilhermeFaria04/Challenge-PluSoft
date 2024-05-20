@@ -84,7 +84,6 @@ export const styles = StyleSheet.create({
         textAlign: 'justify',
     },
     headerbox: {
-        width: 363,
         height: 137,
         backgroundColor: '#333',
         padding: 10,
@@ -153,6 +152,7 @@ export const styles = StyleSheet.create({
         color: '#807A7A',
         textAlign: 'center',
         marginBottom: 5,
+        textDecorationLine: 'line-through',
     },
     produtoPreco: {
         fontSize: 16,

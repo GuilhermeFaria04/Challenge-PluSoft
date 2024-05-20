@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './pages/Home';
 import Cadastro from './pages/Cadastro';
 import Login from './pages/Login';
-import Header from './components/Header';
 import Carrinho from './pages/Carrinho';
 import Favortios from './pages/Favoritos';
 
