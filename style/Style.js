@@ -65,28 +65,35 @@ export const styles = StyleSheet.create({
         color: '#fff',
         textAlign: 'center',
         marginVertical: 20,
-      },
-      consumerWeek: {
+    },
+    consumerWeek: {
         padding: 20,
         backgroundColor: '#fff',
         borderRadius: 10,
         margin: 20,
-      },
-      consumerImage: {
+    },
+    consumerImage: {
         width: '100%',
         height: 200,
         borderRadius: 10,
         marginBottom: 10,
-      },
-      consumerText: {
+    },
+    consumerText: {
         fontSize: 14,
         color: '#000',
         textAlign: 'justify',
-      },
-      headerbox: {
+    },
+    headerbox: {
+        width: 363,
+        height: 137,
         backgroundColor: '#333',
         padding: 10,
+        justifyContent: 'center',
+        borderStyle: 'solid',
+        borderColor: 'white',
+        borderRadius: 20,
         marginTop: 20,
+        gap: 20,
     },
     topSection: {
         flexDirection: 'row',
@@ -98,11 +105,13 @@ export const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 24,
         fontWeight: 'bold',
+        marginLeft: 10,
     },
     iconsRow: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-around',
+        marginRight: 10,
     },
     icon: {
         marginHorizontal: 5,

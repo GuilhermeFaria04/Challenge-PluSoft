@@ -17,17 +17,17 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{ header: () => <Header /> }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Carrinho"
           component={Carrinho}
-          options={{ header: () => <Header /> }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Favoritos"
           component={Favortios}
-          options={{ header: () => <Header /> }}
+          options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Cadastro"

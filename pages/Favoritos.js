@@ -1,12 +1,23 @@
 import React from 'react';
-import { View, Text } from "react-native-web";
+import { View, Text, StyleSheet } from "react-native";
+import Header from '../components/Header';
 
-const Favortios = () => {
+const Favoritos = () => {
     return(
-      <View>
+      <View style={styles.container}>
+        <Header/>
         <Text>Favoritos</Text>
       </View>  
     )
 }
 
-export default Favortios;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#000',
+    padding: 10,
+  },
+}
+)
+
+export default Favoritos;

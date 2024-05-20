@@ -1,38 +1,41 @@
 import React from 'react';
 import { View, Text, ScrollView, Image, StyleSheet } from 'react-native';
-//import foto from '../assets/Challenge-consummidor'
+import Header from '../components/Header';
+import consumidor from '../assets/Challenge-consumidor.png'
 
 const Home = () => {
   const ProdutosEletronicos = [
     {
       title: 'Smartphone Apple iPhone 13 256GB 5G Tela 6.1" Vermelho',
-      subtitle: 'de R$ 6.000,00',
+      subtitle: 'de R$ 8.999,00',
       price: 'Por R$ 4.589,00 no PIX',
-      //image: 'https://example.com/iphone13.jpg'
+      image: require('../assets/Challenge-celular.png')
     },
     {
-      title: 'Smartphone Samsung Galaxy S21 128GB 5G',
-      subtitle: 'de R$ 5.000,00',
-      price: 'Por R$ 3.999,00 no PIX',
-      //image: 'https://example.com/galaxys21.jpg'
+      title: 'Smart TV LG 55" NanoCell 4K UHD WebOS 23 ThinQ AI 55NANO77SRA',
+      subtitle: 'de R$ 4.999,00',
+      price: 'Por R$ 2.999,00 no PIX',
+      image: require('../assets/Challenge-tv.png')
+      
     }
   ];
 
   const ProdutosDomesticos = [
     {
       title: 'Fritadeira Airfryer Electrolux Family Efficient EAF51 5L 1700W 127V Vermelho',
-      subtitle: 'de R$ 600,00',
+      subtitle: 'de R$ 699,00',
       price: 'Por R$ 399,00 no PIX',
-      //image: 'https://example.com/airfryer.jpg'
+      image: require('../assets/Challenge-fritadeira.png')
     }
   ];
 
   return (
     <ScrollView style={styles.container}>
+      <Header/>
       <Text style={styles.titulo}>Produtos em destaque!</Text>
       {ProdutosEletronicos.map((item, index) => (
         <View key={index} style={styles.produtoBox}>
-          <Image source={{ uri: item.image }} style={styles.produtoImagem} />
+          <Image source={item.image} style={styles.produtoImagem} />
           <Text style={styles.produtoTitulo}>{item.title}</Text>
           <Text style={styles.produtoSubtitulo}>{item.subtitle}</Text>
           <Text style={styles.produtoPreco}>{item.price}</Text>
@@ -41,17 +44,20 @@ const Home = () => {
       <Text style={styles.titulo}>Produtos domésticos</Text>
       {ProdutosDomesticos.map((item, index) => (
         <View key={index} style={styles.produtoBox}>
-          <Image source={{ uri: item.image }} style={styles.produtoImagem} />
+          <Image source={item.image} style={styles.produtoImagem} />
           <Text style={styles.produtoTitulo}>{item.title}</Text>
           <Text style={styles.produtoSubtitulo}>{item.subtitle}</Text>
           <Text style={styles.produtoPreco}>{item.price}</Text>
         </View>
       ))}
       <Text style={styles.titulo}>Semana do consumidor</Text>
-      <View style={styles.consumidor}>
-        <Image style={styles.consumidorImagem} />
+      <View style={styles.container}>
+        <Image source={consumidor} style={styles.consumidorImagem} />
+        <Text style={styles.consumidorTitulo}>
+          Semana do Consumidor 2024: A Black Friday do primeiro semestre! {'\n'}
+        </Text>   
         <Text style={styles.consumidorTexto}>
-          Semana do Consumidor 2024: A Black Friday do primeiro semestre! O dia 15 de março é marcado como o Dia do Consumidor, por ser a data em que foi falado pela primeira vez sobre os direitos do consumidor. Desde então, campanhas e promoções especiais são promovidas todos os anos, como uma oportunidade de retribuir e reforçar esses direitos ao consumidor, com promoções para saudar esse cliente tão especial.
+          O dia 15 de março é marcado como o Dia do Consumidor, por ser a data em que foi falado pela primeira vez sobre os direitos do consumidor. Desde então, campanhas e promoções especiais são promovidas todos os anos, como uma oportunidade de retribuir e reforçar esses direitos ao consumidor, com promoções para saudar esse cliente tão especial.
         </Text>
       </View>
     </ScrollView>
@@ -80,9 +86,8 @@ const styles = StyleSheet.create({
       padding: 10,
     },
     produtoImagem: {
-      width: '100%',
-      height: 150,
-      resizeMode: 'cover',
+      width: 144,
+      height: 144,
       marginBottom: 10,
     },
     produtoTitulo: {
@@ -94,7 +99,7 @@ const styles = StyleSheet.create({
     },
     produtoSubtitulo: {
       fontSize: 14,
-      color: '#FFF',
+      color: '#807A7A',
       textAlign: 'center',
       marginBottom: 5,
     },
@@ -102,16 +107,18 @@ const styles = StyleSheet.create({
       fontSize: 16,
       color: '#FFF',
       textAlign: 'center',
-    },
-    consumidor: {
-      padding: 20,
-      margin: 20,
+      fontWeight: 'bold'
     },
     consumidorImagem: {
       width: '100%',
-      height: 200,
-      borderRadius: 10,
+      height: 196,
+      borderRadius: 16,
       marginBottom: 10,
+    },
+    consumidorTitulo: {
+      fontSize: 14,
+      color: '#FFFFFF',
+      fontWeight: 'bold',
     },
     consumidorTexto: {
       fontSize: 14,

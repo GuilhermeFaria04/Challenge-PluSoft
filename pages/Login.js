@@ -8,16 +8,7 @@ import Button from '../components/Button';
 
 const Login = ({ navigation }) => {
     const [user, setUser] = useState("");
-    const [pass, setPass] = useState("");
-
-    const handleLogin = () => {
-        if (user && pass) {
-            navigation.navigate('Home');
-        } else {
-            alert('Por favor, preencha ambos os campos.');
-        }
-    };
-
+    const [pass, setPass] = useState("");    
     return (
         <View style={styles.container}>
             <View style={styles.boxlogin}>
@@ -35,7 +26,7 @@ const Login = ({ navigation }) => {
                         secureTextEntry={true} />
                 </View>
                 <Text style={styles.textlink} onPress={() => { navigation.navigate('Cadastro') }}>Não possui cadastro? Clique aqui</Text>
-                <Button title='Logar' onPress={handleLogin} />
+                <Button title='Logar' onpress={() => { navigation.navigate('Home') }}/>
             </View>
         </View>
     )
