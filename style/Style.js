@@ -128,8 +128,54 @@ export const styles = StyleSheet.create({
         color: '#000',
         marginLeft: 5,
     },
-
-
+    produtoBox: {
+        backgroundColor: '#333',
+        borderRadius: 10,
+        overflow: 'hidden',
+        marginBottom: 20,
+        alignItems: 'center',
+        padding: 10,
+    },
+    produtoImagem: {
+        width: 144,
+        height: 144,
+        marginBottom: 10,
+    },
+    produtoTitulo: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#FFF',
+        textAlign: 'center',
+        marginBottom: 5,
+    },
+    produtoSubtitulo: {
+        fontSize: 14,
+        color: '#807A7A',
+        textAlign: 'center',
+        marginBottom: 5,
+    },
+    produtoPreco: {
+        fontSize: 16,
+        color: '#FFF',
+        textAlign: 'center',
+        fontWeight: 'bold'
+    },
+    consumidorImagem: {
+        width: '100%',
+        height: 196,
+        borderRadius: 16,
+        marginBottom: 10,
+    },
+    consumidorTitulo: {
+        fontSize: 14,
+        color: '#FFFFFF',
+        fontWeight: 'bold',
+    },
+    consumidorTexto: {
+        fontSize: 14,
+        color: '#FFF',
+        textAlign: 'justify',
+    },
 });
 
 export default { styles };
