@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import consumidor from '../assets/Challenge-consumidor.png'
 import { styles } from '../style/Style'
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { AntDesign } from '@expo/vector-icons';
 import axios from 'axios';
 
 const Home = ({navigation}) => {
@@ -97,6 +98,9 @@ async function carrinho(item){
           O dia 15 de março é marcado como o Dia do Consumidor, por ser a data em que foi falado pela primeira vez sobre os direitos do consumidor. Desde então, campanhas e promoções especiais são promovidas todos os anos, como uma oportunidade de retribuir e reforçar esses direitos ao consumidor, com promoções para saudar esse cliente tão especial.
         </Text>
       </View>
+      <View style={stylesHome.chatBot}>
+        <AntDesign name="message1" size={35} color="#FFF" />
+      </View>
     </ScrollView>
   );
 };
@@ -126,6 +130,17 @@ const stylesHome = StyleSheet.create({
     bottom: 10,
     right: 45,
   },
+  chatBot: {
+    backgroundColor: '#0043EF91',
+    width: 55,
+    height: 55,
+    borderRadius: 50,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginStart: 'auto',
+    marginBottom: 50,
+  }
 });
 
 export default Home;
