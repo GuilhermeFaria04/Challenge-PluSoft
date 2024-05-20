@@ -131,9 +131,9 @@ export const styles = StyleSheet.create({
     produtoBox: {
         backgroundColor: '#333',
         borderRadius: 10,
-        overflow: 'hidden',
         marginBottom: 20,
         alignItems: 'center',
+        justifyContent: 'center',
         padding: 10,
     },
     produtoImagem: {

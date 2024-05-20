@@ -3,6 +3,7 @@ import { View, Text, ScrollView, Image, StyleSheet } from 'react-native';
 import Header from '../components/Header';
 import consumidor from '../assets/Challenge-consumidor.png'
 import { styles } from '../style/Style'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Home = () => {
   const ProdutosEletronicos = [
@@ -40,6 +41,7 @@ const Home = () => {
           <Text style={styles.produtoTitulo}>{item.title}</Text>
           <Text style={styles.produtoSubtitulo}>{item.subtitle}</Text>
           <Text style={styles.produtoPreco}>{item.price}</Text>
+          <Icon name="heart-o" size={24} color="white" style={stylesHome.icon} />
         </View>
       ))}
       <Text style={stylesHome.titulo}>Produtos domésticos</Text>
@@ -49,6 +51,7 @@ const Home = () => {
           <Text style={styles.produtoTitulo}>{item.title}</Text>
           <Text style={styles.produtoSubtitulo}>{item.subtitle}</Text>
           <Text style={styles.produtoPreco}>{item.price}</Text>
+          <Icon name="heart-o" size={24} color="white" style={stylesHome.icon} />
         </View>
       ))}
       <Text style={stylesHome.titulo}>Semana do consumidor</Text>
@@ -77,6 +80,12 @@ const stylesHome = StyleSheet.create({
     color: '#FFF',
     textAlign: 'center',
     marginVertical: 20,
+  },
+  icon: {
+    marginHorizontal: 5,
+    position: 'absolute',
+    bottom: 10,
+    right: 10,
   },
 });
 

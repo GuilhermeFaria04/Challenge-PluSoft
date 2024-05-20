@@ -15,13 +15,13 @@ const Header = () => {
                 </TouchableOpacity>
                 <View style={styles.iconsRow}>
                     <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
-                        <Icon name="user" size={24} color="white" style={styles.icon} />
+                        <Icon name="user-o" size={24} color="white" style={styles.icon} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('Login')}>
                         <Icon name="sign-in" size={24} color="white" style={styles.icon} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('Favoritos')}>
-                        <Icon name="heart" size={24} color="white" style={styles.icon} />
+                        <Icon name="heart-o" size={24} color="white" style={styles.icon} />
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => navigation.navigate('Carrinho')}>
                         <Icon name="shopping-cart" size={24} color="white" style={styles.icon} />
